@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Parisienne&display=swap');
+
+body {
+    /* background: black url('../images/ocean.jpg') repeat; */
+    font-weight: 800;
+    overflow: hidden;
+    font-family: "Open Sans", cursive;
+}
+
+div.wrapper {
+    width: 100%;
+    display: grid;
+    margin: 0 1rem;
+}
+
+div.title, h2.lindt {
+    font-family: "Parisienne", cursive;
+}
