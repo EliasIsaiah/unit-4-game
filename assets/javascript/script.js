@@ -46,7 +46,12 @@ $(document).ready(function () {
         }
     }
 
-    //$("div.")
+    for(i = 0; i < 4; i++) {
+        let truffle = $("<div>").attr("class", "truffle" + i);
+        truffle.text("truffle: " + i);
+        $("div.trufflesDiv").append(truffle);
+        // console.log(truffle);
+    }
 
     game.generateTruffles();
 
