@@ -32,7 +32,7 @@ div.container {
     margin: 0 auto;
     display: grid;
     /* margin: 0 1rem; */
-    grid-template-rows: [row-start row-1-start] auto [row-2-start] 1fr [row-3-start] 1fr [row-4-start] 1fr [row-end row-4-end];
+    grid-template-rows: [row-start row-1-start] auto [row-2-start] 1fr [row-3-start] .25fr [row-4-start] 1fr [row-end row-4-end];
     grid-template-columns: [col-start col-1-start] 1fr [col-2-start] 1fr [col-3-start] 1fr [col-3-end col-end];
     grid-gap: .5rem;
 
@@ -58,6 +58,25 @@ div.title {
     margin: .5rem 0 .5rem 0;
     padding: .5rem;
     font-size: 2rem;
+}
+
+div.mainContent {
+    grid-row: row-3-start / row-4-start;
+    grid-column: col-start / col-end;
+    display:flex;
+    justify-content: center;
+}
+
+div.targetNumberDiv, div.scoreboard, div.recordDiv {
+    display: inline-flex;
+    background-color: brown;
+    color: white;
+    margin: .5rem;
+    padding: .5rem;
+    height: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 div.instructions {
