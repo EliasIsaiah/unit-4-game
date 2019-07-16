@@ -47,9 +47,10 @@ $(document).ready(function () {
     }
 
     for(i = 0; i < 4; i++) {
-        let truffle = $("<div>").attr("class", "truffle" + i);
+        let truffle = $("<div>").attr("class", "truffle" + i).css({"background": url(./images/truffle + i + -148x148.png, "border-radius": "1rem"});
         truffle.text("truffle: " + i);
         $("div.trufflesDiv").append(truffle);
+
         // console.log(truffle);
     }
 

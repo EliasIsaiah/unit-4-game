@@ -102,7 +102,33 @@ div h2.lindt {
     margin: .25rem 0 .25rem 0;
 }
 
-div.trufflesDiv div {
+div.trufflesDiv {
+    display: flex;
     grid-row: row-4-start;
+    grid-column: col-start / col-end;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+div.trufflesDiv div {
+    display: inline-flex;
+    /* grid-row: row-4-start; */
+    /* grid-column: col-start;  */
+}
+
+/* div.truffle0 {
     grid-column: col-start;
 }
+
+div.truffle1 {
+    grid-column: col-2-start;
+}
+
+div.truffle2 {
+    grid-column: col-3-start;
+}
+
+div.truffle3 {
+    grid-row: row-4-start;
+    grid-column: col-4-start;
+} */
