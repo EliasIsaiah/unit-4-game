@@ -7,12 +7,77 @@ body {
     font-family: "Open Sans", cursive;
 }
 
-div.wrapper {
+p {
+    margin-bottom: .5rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    line-height: 1.2rem;
+    letter-spacing: .1rem;
+    font-size: 1rem;
+}
+
+p:last-child {
+    margin-bottom: 0rem;
+}
+
+
+/* div.wrapper {
+    width: 99%;
+    margin: auto;
+} */
+
+div.container {
     width: 100%;
+    margin: 0 auto;
     display: grid;
-    margin: 0 1rem;
+    /* margin: 0 1rem; */
+    grid-template-rows: [row-start row-1-start] 1fr [row-2-start] auto [row-3-start] 1fr [row-4-start] 1fr [row-end row-4-end];
+    grid-template-columns: [col-start col-1-start] 1fr [col-2-start] 1fr [col-3-start] 1fr [col-3-end col-end];
+    grid-gap: .5rem;
+
+/*     grid-template-areas: 
+
+        "header header header"
+        ". instructions ."
+        "content content content content"
+        "truffle truffle truffle truffle"; */
+
 }
 
 div.title, h2.lindt {
     font-family: "Parisienne", cursive;
+}
+
+div.title {
+    grid-row: row-start;
+    grid-column: col-start / col-end;
+    color: white;
+    background-color: brown;
+    text-align: center;
+    margin: .5rem 0;
+    padding: .5rem;
+    font-size: 2rem;
+}
+
+div.instructions {
+    grid-row: row-2-start;
+    grid-column: col-start / col-end;
+    overflow-y: auto;
+    overflow: scroll;
+}
+
+span.instructions {
+    max-height: 100%;
+    overflow: auto;
+}
+
+div.scrollable {
+    position: relative;
+    min-height: 4rem;
+}
+
+div h2.lindt {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: .25rem 0 .25rem 0;
 }
