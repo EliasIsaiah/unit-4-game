@@ -46,7 +46,7 @@ $(document).ready(function () {
         }
     }
 
-    $("div.")
+    //$("div.")
 
     game.generateTruffles();
 
