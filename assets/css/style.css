@@ -24,6 +24,11 @@ p:last-child {
     margin-bottom: 0rem;
 }
 
+.animated {
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+}
 
 /* div.wrapper {
     width: 99%;

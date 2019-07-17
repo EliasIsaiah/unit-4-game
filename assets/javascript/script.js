@@ -33,6 +33,7 @@ $(document).ready(function () {
                 let truffle = $("<div>");
                 truffle
                 .attr("class", "truffle" + i)
+                .attr("sclass", "pulse")
                 .attr("value", i)
                 .css({
                     'color': '#ffffff',
@@ -111,6 +112,8 @@ $(document).ready(function () {
     $("div.trufflesDiv div").on("click", function(event){
         
         let _this = $(this);
+
+        // _this.attr("class", "pulse");
         
         let value = parseInt(_this.attr("value"), 10);
 
