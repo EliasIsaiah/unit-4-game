@@ -31,7 +31,7 @@ div.container {
     margin: 0 auto;
     display: grid;
     /* margin: 0 1rem; */
-    grid-template-rows: [row-start row-1-start] minmax(auto, .1fr) [row-2-start] minmax(auto, 1fr) [row-3-start] minmax(auto, 1fr) [row-4-start] minmax(auto, 1fr) [row-end row-4-end];
+    grid-template-rows: [row-start row-1-start] minmax(auto, .2fr) [row-2-start] minmax(auto, 1fr) [row-3-start] minmax(auto, 1fr) [row-4-start] minmax(auto, 1fr) [row-end row-4-end];
     grid-template-columns: [col-start col-1-start] 1fr [col-2-start] 1fr [col-3-start] 1fr [col-4-start] 1fr [col-4-end col-end];
     grid-gap: .5rem;
 
