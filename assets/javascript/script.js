@@ -32,17 +32,17 @@ $(document).ready(function () {
                 let imageUrl = "./assets/images/truffle" + i + ".png";
                 let truffle = $("<div>");
                 truffle
-                .attr("class", "truffle" + i)
-                .attr("sclass", "pulse")
-                .attr("value", i)
-                .css({
-                    'color': '#ffffff',
-                    'margin': '.5rem',
-                    'background': 'url(' + imageUrl + ')',
-                    'background-size': 'contain',
-                    'background-repeat': 'no-repeat',
-                    'border-radius': '2rem'
-                });
+                    .attr("class", "truffle" + i)
+                    .attr("sclass", "pulse")
+                    .attr("value", i)
+                    .css({
+                        'color': '#ffffff',
+                        'margin': '.5rem',
+                        'background': 'url(' + imageUrl + ')',
+                        'background-size': 'contain',
+                        'background-repeat': 'no-repeat',
+                        'border-radius': '2rem'
+                    });
 
                 $("div.trufflesDiv").append(truffle);
             }
@@ -70,19 +70,19 @@ $(document).ready(function () {
             console.log(this.truffles);
         },
 
-        processTruffleClick: function(index) {
+        processTruffleClick: function (index) {
 
             this.score += this.truffles[index];
 
             $("p.score").text(this.score);
 
-            if(this.gameIsOver() && this.won) {
+            if (this.gameIsOver() && this.won) {
                 this.wins++;
                 $("p.wins").text("W: " + this.wins);
                 alert("Congratulations, You Won!");
                 this.initGame();
 
-            } else if(this.gameIsOver()) {                
+            } else if (this.gameIsOver()) {
                 this.losses++;
                 $("p.losses").text("L: " + this.losses);
                 alert("Aww, you lost :(");
@@ -90,16 +90,16 @@ $(document).ready(function () {
             }
         },
 
-        gameIsOver: function() {
-            
-            if(this.score > this.targetNumber) {
-                console.log(this.losses);                
+        gameIsOver: function () {
+
+            if (this.score > this.targetNumber) {
+                console.log(this.losses);
                 this.won = false;
                 return true;
             }
-            if(this.score === this.targetNumber) {
+            if (this.score === this.targetNumber) {
                 this.won = true;
-                return true;            
+                return true;
             }
         }
     }
@@ -109,26 +109,26 @@ $(document).ready(function () {
     game.generateTruffleArr();
     game.buildTruffleDOM();
 
-    $("div.trufflesDiv div").on("click", function(event){
-        
+    $("div.trufflesDiv div").on("click", function (event) {
+
         let _this = $(this);
 
         animationClick(_this, "pulse");
-        
+
         let value = parseInt(_this.attr("value"), 10);
 
         game.processTruffleClick(value);
     });
 
-    function animationClick(element, animation){
+    function animationClick(element, animation) {
         element.click(
-          function() {
-            element.addClass('animated ' + animation);
-            //wait for animation to finish before removing classes
-            window.setTimeout( function(){
-                element.removeClass('animated ' + animation);
-            }, 2000);
-          }
+            function () {
+                element.addClass('animated ' + animation);
+                //wait for animation to finish before removing classes
+                window.setTimeout(function () {
+                    element.removeClass('animated ' + animation);
+                }, 2000);
+            }
         );
     };
 
