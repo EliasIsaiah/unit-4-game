@@ -5,6 +5,8 @@ body {
     overflow: hidden;
     font-family: "Open Sans", cursive;
     letter-spacing: .05rem;
+    background: #a65826;
+    color: white;
 }
 
 p {
@@ -53,7 +55,7 @@ div.title {
     grid-row: row-start;
     grid-column: col-start / col-end;
     color: white;
-    background-color: brown;
+    background-color: #4E2E28;
     text-align: center;
     /* margin: .5rem 0 .5rem 0; */
     padding: .5rem;
@@ -67,9 +69,9 @@ div.mainContent {
     justify-content: center;
 }
 
-div.targetNumberDiv, div.scoreboard, div.recordDiv {
+div.targetNumber, div.scoreboard, div.recordDiv {
     display: inline-flex;
-    background-color: brown;
+    background-color: #4E2E28;
     color: white;
     margin: .5rem;
     padding: .5rem;
@@ -86,17 +88,20 @@ div.targetNumberDiv, div.scoreboard, div.recordDiv {
 div.stack, p.stack {
     display: flex;
     flex-direction: column;
-    margin: .5rem;
 }
 
-div.block {
+/* div.block {
     display: block;
-}
+} */
 
 div.instructions {
     grid-row: row-2-start / row-3-start;
     grid-column: col-start / col-end;
     overflow-y: scroll;
+}
+
+div.instructions, div.stack {
+    color: #dfdfdf;
 }
 
 span.instructions {
