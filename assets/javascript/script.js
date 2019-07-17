@@ -113,11 +113,23 @@ $(document).ready(function () {
         
         let _this = $(this);
 
-        // _this.attr("class", "pulse");
+        animationClick(_this, "pulse");
         
         let value = parseInt(_this.attr("value"), 10);
 
         game.processTruffleClick(value);
     });
+
+    function animationClick(element, animation){
+        element.click(
+          function() {
+            element.addClass('animated ' + animation);
+            //wait for animation to finish before removing classes
+            window.setTimeout( function(){
+                element.removeClass('animated ' + animation);
+            }, 2000);
+          }
+        );
+    };
 
 });
