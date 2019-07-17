@@ -55,7 +55,6 @@ $(document).ready(function () {
         });
         // truffle.css("background", "brown");
         
-        truffle.text("truffle: " + i);
         $("div.trufflesDiv").append(truffle);
 
         // console.log(truffle);
