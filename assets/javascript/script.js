@@ -2,7 +2,6 @@ $(document).ready(function () {
     let game = {
 
         /* 
-        
         VARIABLES:
 
         -random number
@@ -10,8 +9,7 @@ $(document).ready(function () {
             --truffle1 number
             --truffle2 number
             --truffle3 number
-            --truffle4 number        
-        
+            --truffle4 number
         */
 
         targetNumber: null,
@@ -47,7 +45,15 @@ $(document).ready(function () {
     }
 
     for(i = 0; i < 4; i++) {
-        let truffle = $("<div>").attr("class", "truffle" + i).css({"background": url(./images/truffle + i + -148x148.png, "border-radius": "1rem"});
+        let imageUrl = "./assets/images/truffle" + i + ".png";
+        let truffle = $("<div>");
+        truffle.attr("class", "truffle" + i).css("border-radius", "1rem").css("margin", ".5rem").css("padding", "1.5rem").css("color", "white");
+        truffle.css({
+            'background': 'url(' + imageUrl + ')',
+            'background-size': 'cover',
+        });
+        // truffle.css("background", "brown");
+        
         truffle.text("truffle: " + i);
         $("div.trufflesDiv").append(truffle);
 
