@@ -6,6 +6,9 @@ body {
     font-weight: 800;
     overflow: hidden;
     font-family: "Open Sans", cursive;
+    letter-spacing: .05rem;
+    background: #a65826;
+    color: white;
 }
 
 p {
@@ -13,7 +16,7 @@ p {
     margin-left: .5rem;
     margin-right: .5rem;
     line-height: 1.2rem;
-    letter-spacing: .1rem;
+    letter-spacing: .05rem;
     font-size: 1rem;
 }
 
@@ -33,7 +36,7 @@ div.container {
     margin: 0 auto;
     display: grid;
     /* margin: 0 1rem; */
-    grid-template-rows: [row-start row-1-start] minmax(auto, .1fr) [row-2-start] minmax(auto, 1fr) [row-3-start] minmax(auto, 1fr) [row-4-start] minmax(auto, 1fr) [row-end row-4-end];
+    grid-template-rows: [row-start row-1-start] minmax(auto, .1fr) [row-2-start] minmax(auto, 1fr) [row-3-start] minmax(auto, .5fr) [row-4-start] minmax(auto, 1fr) [row-end row-4-end];
     grid-template-columns: [col-start col-1-start] 1fr [col-2-start] 1fr [col-3-start] 1fr [col-4-start] 1fr [col-4-end col-end];
     grid-gap: .5rem;
 
@@ -54,7 +57,7 @@ div.title {
     grid-row: row-start;
     grid-column: col-start / col-end;
     color: white;
-    background-color: brown;
+    background-color: #4E2E28;
     text-align: center;
     /* margin: .5rem 0 .5rem 0; */
     padding: .5rem;
@@ -68,9 +71,9 @@ div.mainContent {
     justify-content: center;
 }
 
-div.targetNumberDiv, div.scoreboard, div.recordDiv {
+div.targetNumber, div.scoreboard, div.recordDiv {
     display: inline-flex;
-    background-color: brown;
+    background-color: #4E2E28;
     color: white;
     margin: .5rem;
     padding: .5rem;
@@ -79,12 +82,28 @@ div.targetNumberDiv, div.scoreboard, div.recordDiv {
     align-items: center;
     justify-content: center;
     flex-grow: 1;
+    line-height: 1.5rem;
 }
+
+/* div.targetNumberDiv {} */
+
+div.stack, p.stack {
+    display: flex;
+    flex-direction: column;
+}
+
+/* div.block {
+    display: block;
+} */
 
 div.instructions {
     grid-row: row-2-start / row-3-start;
     grid-column: col-start / col-end;
     overflow-y: scroll;
+}
+
+div.instructions, div.stack {
+    color: #dfdfdf;
 }
 
 span.instructions {
@@ -99,7 +118,7 @@ div.scrollable {
 
 div h2.lindt {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin: .25rem 0 .25rem 0;
 }
 
@@ -134,4 +153,43 @@ div.truffle2 {
 div.truffle3 {
     grid-row: row-4-start;
     grid-column: col-4-start;
+}
+
+footer.pageFooter {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: .2rem 0;
+    font-style: italic;
+    text-align: center;
+    background: #4e2e28;
+}
+
+footer p {
+    color: #dfdfdf;
+    font-size: .6rem;
+}
+
+@media screen and (min-width: 1024px) {
+    div.container {
+        grid-template-rows: [row-start row-1-start] minmax(auto, .1fr) [row-2-start] auto [row-3-start] minmax(auto, .5fr) [row-4-start] minmax(auto, 1fr) [row-end row-4-end];
+    }
+
+    div.targetNumber p, div.scoreboard p, div.recordDiv p {
+        font-size: 3rem;
+        line-height: 4rem;
+    }
+}
+@media screen and (min-width: 1366px) {
+    div.instructions {
+        grid-column: col-2-start / col-4-start;
+        overflow-y: hidden;
+    }
+}
+
+@media screen and (min-width: 1900px) {
+    div.container {
+        width: 60%;
+    }   
 }
