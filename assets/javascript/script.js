@@ -47,10 +47,11 @@ $(document).ready(function () {
     for(i = 0; i < 4; i++) {
         let imageUrl = "./assets/images/truffle" + i + ".png";
         let truffle = $("<div>");
-        truffle.attr("class", "truffle" + i).css("border-radius", "1rem").css("margin", ".5rem").css("padding", "1.5rem").css("color", "white");
+        truffle.attr("class", "truffle" + i).css("border-radius", "1rem").css("margin", ".5rem").css("color", "white");
         truffle.css({
             'background': 'url(' + imageUrl + ')',
-            'background-size': 'cover',
+            'background-size': 'contain',
+            'background-repeat': 'no-repeat',
         });
         // truffle.css("background", "brown");
         
