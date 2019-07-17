@@ -34,7 +34,7 @@ $(document).ready(function () {
         generateTruffles: function() {
             while(this.truffles.length < 4) {
 
-                let rand = this.getRandom(30, 10);
+                let rand = this.getRandom(20, 5);
 
                 if(this.truffles.indexOf(rand) === -1) {
                     this.truffles.push(rand);
@@ -44,6 +44,29 @@ $(document).ready(function () {
         }
     }
 
+    let truffle0 = {
+        value: 0,
+        counter: 0,
+        
+        scramble: function() {
+            truffles[0] = getRandom(20, 5);
+
+        }
+    }
+
+    let truffle1 = {
+        value: 0,
+    }
+
+    let truffle2 = {
+        value: 0,
+    }
+
+    let truffle3 = {
+        value: 0,
+    }
+
+    //build the truffle divs
     for(i = 0; i < 4; i++) {
         let imageUrl = "./assets/images/truffle" + i + ".png";
         let truffle = $("<div>");
@@ -60,6 +83,7 @@ $(document).ready(function () {
         // console.log(truffle);
     }
 
+    game.generateTarget()
     game.generateTruffles();
 
 });
