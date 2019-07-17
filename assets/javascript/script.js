@@ -21,6 +21,8 @@ $(document).ready(function () {
         wins: 0,
         losses: 0,
         score: 0,
+        targetNumberDiv: $("div.targetNumberDiv div.targetDiv"),
+
 
         getRandom: function (min, max) {
             return Math.floor(Math.random() * (max - min)) + min;
@@ -28,6 +30,7 @@ $(document).ready(function () {
 
         generateTarget: function () {
             this.targetNumber = this.getRandom(100, 40);
+            $()
             console.log(`targetNumber: ${game.targetNumber}`);
         },
 
@@ -44,7 +47,7 @@ $(document).ready(function () {
         }
     }
 
-    let truffle0 = {
+/*     let truffle0 = {
         value: 0,
         counter: 0,
         
@@ -64,7 +67,7 @@ $(document).ready(function () {
 
     let truffle3 = {
         value: 0,
-    }
+    } */
 
     //build the truffle divs
     for(i = 0; i < 4; i++) {
@@ -83,7 +86,7 @@ $(document).ready(function () {
         // console.log(truffle);
     }
 
-    game.generateTarget()
+    game.generateTarget();
     game.generateTruffles();
 
 });

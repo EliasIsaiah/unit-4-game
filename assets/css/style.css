@@ -4,6 +4,7 @@ body {
     font-weight: 800;
     overflow: hidden;
     font-family: "Open Sans", cursive;
+    letter-spacing: .05rem;
 }
 
 p {
@@ -11,7 +12,7 @@ p {
     margin-left: .5rem;
     margin-right: .5rem;
     line-height: 1.2rem;
-    letter-spacing: .1rem;
+    letter-spacing: .05rem;
     font-size: 1rem;
 }
 
@@ -78,6 +79,18 @@ div.targetNumberDiv, div.scoreboard, div.recordDiv {
     justify-content: center;
     flex-grow: 1;
     line-height: 1.5rem;
+}
+
+/* div.targetNumberDiv {} */
+
+div.stack, p.stack {
+    display: flex;
+    flex-direction: column;
+    margin: .5rem;
+}
+
+div.block {
+    display: block;
 }
 
 div.instructions {
