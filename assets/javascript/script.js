@@ -84,6 +84,7 @@ $(document).ready(function () {
             } else if(this.gameIsOver()) {                
                 this.losses++;
                 $("p.losses").text("L: " + this.losses);
+                alert("Aww, you lost :(");
                 this.initGame();
             }
         },
