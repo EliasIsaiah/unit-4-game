@@ -1,17 +1,6 @@
 $(document).ready(function () {
     let game = {
 
-        /* 
-        VARIABLES:
-
-        -random number
-            --target number
-            --truffle1 number
-            --truffle2 number
-            --truffle3 number
-            --truffle4 number
-        */
-
         targetNumber: null,
         truffle0: null,
         truffle1: null,
@@ -39,7 +28,6 @@ $(document).ready(function () {
         },
 
         buildTruffleDOM: function () {
-            //build the truffle divs
             for (i = 0; i < 4; i++) {
                 let imageUrl = "./assets/images/truffle" + i + ".png";
                 let truffle = $("<div>");
@@ -54,7 +42,6 @@ $(document).ready(function () {
                     'background-repeat': 'no-repeat',
                     'border-radius': '2rem'
                 });
-                // truffle.css("background", "brown");
 
                 $("div.trufflesDiv").append(truffle);
             }
@@ -83,7 +70,9 @@ $(document).ready(function () {
         },
 
         processTruffleClick: function(index) {
+
             this.score += this.truffles[index];
+
             $("p.score").text(this.score);
 
             if(this.gameIsOver() && this.won) {
@@ -91,7 +80,8 @@ $(document).ready(function () {
                 $("p.wins").text("W: " + this.wins);
                 alert("Congratulations, You Won!");
                 this.initGame();
-            } else if(this.gameIsOver()) {
+
+            } else if(this.gameIsOver()) {                
                 this.losses++;
                 $("p.losses").text("L: " + this.losses);
                 this.initGame();
@@ -100,7 +90,7 @@ $(document).ready(function () {
 
         gameIsOver: function() {
             
-            if( this.score > this.targetNumber) {
+            if(this.score > this.targetNumber) {
                 console.log(this.losses);                
                 this.won = false;
                 return true;
@@ -119,9 +109,6 @@ $(document).ready(function () {
 
     $("div.trufflesDiv div").on("click", function(event){
         
-        //immeidate feedback to the console
-        console.log("clicked!");
-
         let _this = $(this);
         
         let value = parseInt(_this.attr("value"), 10);
