@@ -2,10 +2,6 @@ $(document).ready(function () {
     let game = {
 
         targetNumber: null,
-        truffle0: null,
-        truffle1: null,
-        truffle2: null,
-        truffle3: null,
         truffles: [],
         won: null,
         wins: 0,
@@ -115,26 +111,26 @@ $(document).ready(function () {
         game.processTruffleClick(value);
     });
 
-    $("div.trufflesDiv div").on("click", function (event) {
+    // $("div.trufflesDiv div").on("click", function (event) {
 
-        let _this = $(this);
-        animateCSS(this, 'bounce');
-        animateCSS.handleAnimationEnd();
-        console.log(this);
-    });
+    //     let _this = $(this);
+    //     animateCSS(this, 'bounce');
+    //     animateCSS.handleAnimationEnd();
+    //     console.log(this);
+    // });
 
-    function animateCSS(element, animationName, callback) {
-        const node = element
-        node.classList.add('animated', animationName)
+    // function animateCSS(element, animationName, callback) {
+    //     const node = element
+    //     node.classList.add('animated', animationName)
     
-        function handleAnimationEnd() {
-            node.classList.remove('animated', animationName)
-            node.removeEventListener('animationend', handleAnimationEnd)
+    //     function handleAnimationEnd() {
+    //         node.classList.remove('animated', animationName)
+    //         node.removeEventListener('animationend', handleAnimationEnd)
     
-            if (typeof callback === 'function') callback()
-        }
+    //         if (typeof callback === 'function') callback()
+    //     }
     
-        node.addEventListener('animationend', handleAnimationEnd)
-    }
+    //     node.addEventListener('animationend', handleAnimationEnd)
+    // }
     
 });
