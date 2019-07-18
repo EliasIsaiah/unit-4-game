@@ -30,11 +30,6 @@ p:last-child {
     animation-iteration-count: infinite;
 }
 
-/* div.wrapper {
-    width: 99%;
-    margin: auto;
-} */
-
 div.container {
     width: 100%;
     height: 100vh;
@@ -44,14 +39,6 @@ div.container {
     grid-template-rows: [row-start row-1-start] minmax(auto, .1fr) [row-2-start] minmax(auto, 1fr) [row-3-start] minmax(auto, .5fr) [row-4-start] minmax(auto, 1fr) [row-end row-4-end];
     grid-template-columns: [col-start col-1-start] 1fr [col-2-start] 1fr [col-3-start] 1fr [col-4-start] 1fr [col-4-end col-end];
     grid-gap: .5rem;
-
-/*     grid-template-areas: 
-
-        "header header header"
-        ". instructions ."
-        "content content content content"
-        "truffle truffle truffle truffle"; */
-
 }
 
 div.title, h2.lindt {
@@ -90,16 +77,10 @@ div.targetNumber, div.scoreboard, div.recordDiv {
     line-height: 1.5rem;
 }
 
-/* div.targetNumberDiv {} */
-
 div.stack, p.stack {
     display: flex;
     flex-direction: column;
 }
-
-/* div.block {
-    display: block;
-} */
 
 div.instructions {
     grid-row: row-2-start / row-3-start;

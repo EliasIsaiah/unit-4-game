@@ -12,6 +12,7 @@ $(document).ready(function () {
         losses: 0,
         score: 0,
         gameIsOver: false,
+        _this: null,
 
         targetNumberDiv: $("p.targetNumber"),
 
@@ -33,7 +34,6 @@ $(document).ready(function () {
                 let truffle = $("<div>");
                 truffle
                     .attr("class", "truffle" + i)
-                    .attr("sclass", "pulse")
                     .attr("value", i)
                     .css({
                         'color': '#ffffff',
@@ -55,7 +55,6 @@ $(document).ready(function () {
         generateTarget: function () {
             this.targetNumber = this.getRandom(100, 40);
             $("p.targetNumber").text(this.targetNumber);
-            console.log(`targetNumber: ${game.targetNumber}`);
         },
 
         generateTruffleArr: function () {
@@ -67,7 +66,6 @@ $(document).ready(function () {
                     this.truffles.push(rand);
                 }
             }
-            console.log(this.truffles);
         },
 
         processTruffleClick: function (index) {
@@ -112,23 +110,31 @@ $(document).ready(function () {
 
         let _this = $(this);
 
-        // animationClick(_this, "pulse");
-
         let value = parseInt(_this.attr("value"), 10);
 
         game.processTruffleClick(value);
     });
 
-    // function animationClick(element, animation) {
-    //     element.click(
-    //         function () {
-    //             element.addClass('animated ' + animation);
-    //             //wait for animation to finish before removing classes
-    //             window.setTimeout(function () {
-    //                 element.removeClass('animated ' + animation);
-    //             }, 2000);
-    //         }
-    //     );
-    // };
+    $("div.trufflesDiv div").on("click", function (event) {
 
+        let _this = $(this);
+        animateCSS(this, 'bounce');
+        animateCSS.handleAnimationEnd();
+        console.log(this);
+    });
+
+    function animateCSS(element, animationName, callback) {
+        const node = element
+        node.classList.add('animated', animationName)
+    
+        function handleAnimationEnd() {
+            node.classList.remove('animated', animationName)
+            node.removeEventListener('animationend', handleAnimationEnd)
+    
+            if (typeof callback === 'function') callback()
+        }
+    
+        node.addEventListener('animationend', handleAnimationEnd)
+    }
+    
 });
