@@ -110,27 +110,5 @@ $(document).ready(function () {
 
         game.processTruffleClick(value);
     });
-
-    // $("div.trufflesDiv div").on("click", function (event) {
-
-    //     let _this = $(this);
-    //     animateCSS(this, 'bounce');
-    //     animateCSS.handleAnimationEnd();
-    //     console.log(this);
-    // });
-
-    // function animateCSS(element, animationName, callback) {
-    //     const node = element
-    //     node.classList.add('animated', animationName)
-    
-    //     function handleAnimationEnd() {
-    //         node.classList.remove('animated', animationName)
-    //         node.removeEventListener('animationend', handleAnimationEnd)
-    
-    //         if (typeof callback === 'function') callback()
-    //     }
-    
-    //     node.addEventListener('animationend', handleAnimationEnd)
-    // }
     
 });
