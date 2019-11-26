@@ -87,7 +87,6 @@ $(document).ready(function () {
         gameIsOver: function () {
 
             if (this.score > this.targetNumber) {
-                console.log(this.losses);
                 this.won = false;
                 return true;
             }
